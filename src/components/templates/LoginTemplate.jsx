@@ -1,11 +1,24 @@
 import styled from "styled-components";
+import Button from "../../components/molecula/Button";
 
 export default function LoginTemplate() {
     return (
         <Container>
-            <h1>Login Template</h1>
+            <div>
+                <span> version 1.0.0</span>
+                <div>
+                    <img src="" alt="" />
+                </div>
+                <Titulo>Expense Control</Titulo>
+                <p style={{ fontSize: "1.5rem" }}>Take control of your expenses</p>
+            </div>
+
+            {/* Boton */}
+            <ContainerBtn>
+                <Button>Enter</Button>
+            </ContainerBtn>
         </Container>
-    );
+    );  
 }
 
 const Container = styled.div`
@@ -14,4 +27,14 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     height: 100vh;
+`;
+
+const Titulo = styled.span`
+    font-size: 5rem;
+    font-weight: 700;
+`;
+
+const ContainerBtn = styled.div`
+    display: flex;
+    justify-content: center;
 `;

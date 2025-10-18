@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import LoginTemplate from "../components/templates/LoginTemplate";
 
 export default function Login() {
     return (
         <Container>
-            <h1>Login</h1>
+            <LoginTemplate />
         </Container>
     );
 }

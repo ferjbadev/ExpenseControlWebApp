@@ -15,7 +15,7 @@ export default function LoginTemplate() {
 
             {/* Boton */}
             <ContainerBtn>
-                <Button>Enter</Button>
+                <Button titulo="Login with Google" />
             </ContainerBtn>
         </Container>
     );  

@@ -2,12 +2,12 @@
 import MyRoutes from "./routers/routes";
 import { useState } from "react";
 import { ThemeContext } from "./contexts/ThemeContext";
-import { Ligth, Dark } from "./theme";
+import { Light, Dark } from "./styles/theme";
 import { ThemeProvider } from "styled-components";
 
 function App() {
   const [theme, setTheme] = useState("light");
-  const themeStyle = theme === "light" ? Ligth : Dark;
+  const themeStyle = theme === "light" ? Light : Dark;
 
   return (
     <>

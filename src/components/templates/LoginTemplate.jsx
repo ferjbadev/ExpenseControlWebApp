@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import Button from "../../components/molecula/Button";
+import Button from "../atomos/Button";
+import {v as V} from "../../styles/variables";
 
 export default function LoginTemplate() {
     return (
@@ -15,7 +16,7 @@ export default function LoginTemplate() {
 
             {/* Boton */}
             <ContainerBtn>
-                <Button titulo="Login with Google" />
+                <Button titulo="Login with Google"  icono={<V.iconogoogle/>} ></Button>
             </ContainerBtn>
         </Container>
     );  

@@ -11,6 +11,7 @@ export default function MyRoutes() {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path="/" element={<Login />} />
                 <Route path="/login" element={<Login />} />
                 <Route element={<ProtectedRoute user={user} redirectTo="/login" />}>
                     <Route path="/home" element={<Home />} />

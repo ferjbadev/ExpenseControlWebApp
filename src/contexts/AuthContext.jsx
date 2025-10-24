@@ -1,5 +1,6 @@
 import {createContext, useState, useEffect, useContext} from "react";
 import { supabase } from "../supabase/supabase.config";
+import Loading from "../components/atomos/Loading";
 
 const AuthContext = createContext();
 
@@ -29,7 +30,7 @@ export const AuthContextProvider = ({children}) => {
  }, []);
 
  if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
  }
 
 return (

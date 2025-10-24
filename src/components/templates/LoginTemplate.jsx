@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import Button from "../atomos/Button";
 import {v as V} from "../../styles/variables";
+import { useAuthStore } from "../../store/AuthStore";
 
 export default function LoginTemplate() {
+    const {singInWithGoogle} = useAuthStore();
     return (
         <Container imgFondo={V.imagenfondo}>
             <div className="contentCard">
@@ -15,7 +17,7 @@ export default function LoginTemplate() {
 
             {/* Boton */}
             <ContainerBtn>
-                <Button titulo="Sign in with Google"  icono={<V.iconogoogle/>} ></Button>
+                <Button titulo="Sign in with Google"  icono={<V.iconogoogle/>} funcion={singInWithGoogle}></Button>
             </ContainerBtn>
             </div>
         </Container>

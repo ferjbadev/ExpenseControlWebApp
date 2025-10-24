@@ -17,23 +17,24 @@ const ContainerBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   margin: 1rem;
   padding: 0.75rem 1.5rem;
   background: ${(props) => props.bgcolor || "#ffffff"};
-  color: #497548;
-  border: none;
-  border-radius: 8px;
-  font-size: ${(props) => props.theme.fontButton};
-  font-weight: 900;
+  color: #3c4043;
+  border: 2px solid #00F34A;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
   &:hover {
-    opacity: 0.9;
-    transform: translateY(-5px);
+    background: #f8f9fa;
+    border-color: #f45142;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
   }
 
   &:active {

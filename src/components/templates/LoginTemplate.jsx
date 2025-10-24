@@ -7,15 +7,15 @@ export default function LoginTemplate() {
         <Container imgFondo={V.imagenfondo}>
             <div className="contentCard">
                 <span className="version"> version 1.0.0</span>
-                <div>
-                    <img src="" alt="" />
+                <div className="contentImg">
+                    <img src={V.logo} alt="logo" />
                 </div>
                 <Titulo>Expense Control</Titulo>
-                <p style={{ fontSize: "1.5rem" }}>Take control of your expenses</p>
+                <p className="frase" style={{ fontSize: "1.5rem" }}>Take control of your expenses</p>
 
             {/* Boton */}
             <ContainerBtn>
-                <Button titulo="Login with Google"  icono={<V.iconogoogle/>} ></Button>
+                <Button titulo="Sign in with Google"  icono={<V.iconogoogle/>} ></Button>
             </ContainerBtn>
             </div>
         </Container>
@@ -46,8 +46,34 @@ const Container = styled.div`
             color: #727272;
             text-align: start;
         }
-    }
+        .contentImg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 100px;
+                animation: flotar 2s ease-in-out infinite alternate; 
+            }
+        }
+        .frase {
+            animation: flotar 2s ease-in-out infinite alternate;
+            color: #909090;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
 
+    }
+    @keyframes flotar {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(15px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
 `;
 
 const Titulo = styled.span`

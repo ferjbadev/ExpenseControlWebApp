@@ -6,7 +6,7 @@ import { useAuthStore } from "../../store/AuthStore";
 export default function LoginTemplate() {
     const {singInWithGoogle} = useAuthStore();
     return (
-        <Container imgFondo={V.imagenfondo}>
+        <Container $imgFondo={V.imagenfondo}>
             <div className="contentCard">
                 <span className="version"> version 1.0.0</span>
                 <div className="contentImg">
@@ -25,7 +25,7 @@ export default function LoginTemplate() {
 }
 
 const Container = styled.div`
-    background-image: url(${props => props.imgFondo});
+    background-image: url(${props => props.$imgFondo});
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;

@@ -136,6 +136,8 @@ export default function Home() {
                     onClose={handleCloseModal}
                 />
             </Modal>
+
+            <Footer />
         </Container>
     );
 }

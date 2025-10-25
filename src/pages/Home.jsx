@@ -9,6 +9,7 @@ import StatCard from "../components/molecula/StatCard";
 import CategoryChart from "../components/molecula/CategoryChart";
 import EmptyState from "../components/molecula/EmptyState";
 import QuickActions from "../components/molecula/QuickActions";
+import Footer from "../components/atomos/Footer";
 import { FiDollarSign, FiTrendingUp, FiShoppingCart, FiLogOut, FiPlus, FiSun, FiMoon } from "react-icons/fi";
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";

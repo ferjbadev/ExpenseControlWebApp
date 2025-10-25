@@ -18,9 +18,14 @@ export const AuthContextProvider = ({children}) => {
     // Listen for auth changes
     const {data: authListener} = supabase.auth.onAuthStateChange(
         async (event, session) => {
-            setUser(session);
+            if (session === null){
+                setUser(null);
+            } else {
+                setUser(session);
+                console.log("event", event);
+                console.log("session", session?.user);
+            }
             setLoading(false);
-            console.log("Auth event:", event, "Session:", session);
         }
     );
 
@@ -29,11 +34,7 @@ export const AuthContextProvider = ({children}) => {
     };
  }, []);
 
- if (loading) {
-    return <Loading />;
- }
-
-const logout = async () => {
+ const logout = async () => {
     try {
         const { error } = await supabase.auth.signOut();
         if (error) throw error;
@@ -41,9 +42,13 @@ const logout = async () => {
     } catch (error) {
         console.error("Error logging out:", error);
     }
-};
+ };
 
-return (
+ if (loading) {
+    return <Loading />;
+ }
+
+ return (
     <AuthContext.Provider value={{user, logout}}>
         {children}
     </AuthContext.Provider>

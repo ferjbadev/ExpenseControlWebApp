@@ -1,7 +1,15 @@
 import styled from "styled-components";
-import { FiPlusCircle } from "react-icons/fi";
+import { FiPlusCircle, FiDownload } from "react-icons/fi";
+import { loadSampleData } from "../../utils/sampleData";
+import { useExpenseStore } from "../../store/ExpenseStore";
 
 export default function EmptyState({ onAddExpense }) {
+    const { addExpense } = useExpenseStore();
+
+    const handleLoadSample = () => {
+        const count = loadSampleData(addExpense);
+        alert(`✅ Loaded ${count} sample expenses! Check out your dashboard.`);
+    };
     return (
         <Container>
             <Icon>💸</Icon>
@@ -10,10 +18,16 @@ export default function EmptyState({ onAddExpense }) {
                 Take control of your finances by adding your first expense.
                 Track spending, analyze patterns, and achieve your financial goals.
             </Description>
-            <AddButton onClick={onAddExpense}>
-                <FiPlusCircle size={20} />
-                Add Your First Expense
-            </AddButton>
+            <ButtonGroup>
+                <AddButton onClick={onAddExpense}>
+                    <FiPlusCircle size={20} />
+                    Add Your First Expense
+                </AddButton>
+                <SampleButton onClick={handleLoadSample}>
+                    <FiDownload size={20} />
+                    Load Sample Data
+                </SampleButton>
+            </ButtonGroup>
             <Features>
                 <Feature>
                     <FeatureIcon>📊</FeatureIcon>
@@ -74,6 +88,13 @@ const Description = styled.p`
     line-height: 1.6;
 `;
 
+const ButtonGroup = styled.div`
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+`;
+
 const AddButton = styled.button`
     display: flex;
     align-items: center;
@@ -93,6 +114,32 @@ const AddButton = styled.button`
         background-color: #00D940;
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(0, 243, 74, 0.4);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+`;
+
+const SampleButton = styled.button`
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background-color: transparent;
+    color: ${props => props.theme.text};
+    border: 2px solid #4ECDC4;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: #4ECDC4;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
     }
 
     &:active {

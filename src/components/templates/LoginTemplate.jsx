@@ -58,7 +58,6 @@ const Container = styled.div`
             }
         }
         .frase {
-            animation: flotar 2s ease-in-out infinite alternate;
             color: #909090;
             font-size: 1.5rem;
             font-weight: 500;
